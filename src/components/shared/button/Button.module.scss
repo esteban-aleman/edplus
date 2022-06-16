@@ -1,0 +1,29 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  text-transform: uppercase;
+  font-weight: constants.$font-light;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s, border-color ease-in-out 0.3s;
+}
+.secondary {
+  background-color: transparent;
+  border: solid 1px constants.$white;
+  color: constants.$white;
+  &:hover {
+    background-color: constants.$primary;
+    border-color: constants.$primary;
+  }
+}
+.primary {
+  background-color: constants.$primary;
+  color: constants.$white;
+  border: solid 1px constants.$primary;
+  &:hover {
+    background-color: transparent;
+    color: constants.$primary;
+  }
+}

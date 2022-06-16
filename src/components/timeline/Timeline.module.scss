@@ -1,0 +1,39 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  background-color: constants.$tertiary;
+  padding: 5.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  padding: 0;
+  width: 100%;
+  max-width: constants.$skinnyContainer;
+}
+
+.title {
+  position: relative;
+  margin-bottom: 5.5rem;
+  color: constants.$primary;
+  text-align: center;
+  &:before {
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    background-color: constants.$primary;
+    height: 2px;
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .title {
+    margin-bottom: 2.5rem;
+  }
+}

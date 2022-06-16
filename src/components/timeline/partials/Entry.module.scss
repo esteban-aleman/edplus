@@ -1,0 +1,98 @@
+@use "utils/sass/_constants.scss" as constants;
+$rightWidth: 4rem;
+$halfRightWidth: 2rem;
+$contentGap: 2rem;
+$titleSize: constants.$font-m;
+
+.root {
+  display: flex;
+  width: calc(50% + $halfRightWidth);
+  margin-left: calc(50% - $halfRightWidth);
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  align-items: top;
+  position: relative;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity ease-in-out 0.5s, transform ease-in-out 0.5s;
+  &.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    top: $titleSize * 2;
+    left: $halfRightWidth;
+    content: "";
+    background-color: constants.$secondary;
+    opacity: 0.4;
+    height: calc(100% - $titleSize);
+    width: 2px;
+    max-height: 0;
+    transition: max-height ease-in-out 1s;
+  }
+  &.revealLine::after {
+    max-height: 100%;
+  }
+}
+.contentRight {
+  width: $rightWidth;
+  display: flex;
+  justify-content: center;
+  font-size: constants.$font-m;
+  letter-spacing: 0.125rem;
+}
+.contentLeft {
+  padding-left: $contentGap;
+  width: calc(100% - $rightWidth);
+  box-sizing: border-box;
+}
+.odd {
+  flex-direction: row-reverse;
+  margin-left: 0;
+  margin-right: calc(50% - $halfRightWidth);
+  &::after {
+    right: $halfRightWidth;
+    left: initial;
+  }
+  .contentLeft {
+    padding-left: 0;
+    padding-right: $contentGap;
+    text-align: right;
+  }
+}
+.last {
+  margin-bottom: 0;
+  &::after {
+    display: none;
+  }
+  .contentRight {
+    color: constants.$primary;
+    font-weight: constants.$font-bold;
+  }
+}
+.description {
+  font-size: constants.$font-s;
+}
+@media (max-width: constants.$tablet-breakpoint) {
+  .root {
+    margin-left: 0;
+    width: 100%;
+  }
+  .contentLeft {
+    width: calc(100% - $rightWidth);
+  }
+  .odd {
+    flex-direction: row;
+    .contentLeft {
+      padding-left: $contentGap;
+      padding-right: 0;
+      text-align: left;
+    }
+    &::after {
+      left: $halfRightWidth;
+      right: initial;
+    }
+  }
+}

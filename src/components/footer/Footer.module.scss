@@ -1,0 +1,92 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  background-color: constants.$secondary;
+  color: constants.$white;
+  padding: 7.5rem 1.5rem 1rem;
+  font-size: constants.$font-s;
+}
+.top {
+  display: flex;
+  margin: auto;
+  max-width: constants.$containerWidth;
+  padding-bottom: 6.5rem;
+  border-bottom: solid 1px constants.$quaternary;
+}
+
+.columns {
+  display: flex;
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("#{constants.$assetPath}/logo_light.png");
+  margin-bottom: 1.25rem;
+}
+
+.contact {
+  max-width: 17rem;
+}
+
+.contactBlock {
+  margin-top: 0;
+  color: constants.$quaternary;
+  font-size: constants.$font-xs;
+}
+
+.bottom {
+  max-width: constants.$containerWidth;
+  padding-top: 1rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  display: block;
+  width: 1px;
+  background-color: constants.$quaternary;
+  height: 1rem;
+  margin: 0 1rem;
+}
+
+.legalLink {
+  font-size: constants.$font-xs;
+  color: constants.$quaternary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.copyright {
+  font-size: constants.$font-xs;
+  color: constants.$quaternary;
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .root {
+    padding: 4.5rem 1.5rem 1rem;
+  }
+  .logo {
+    margin-bottom: 1.25rem;
+  }
+  .top {
+    flex-direction: column;
+    padding-bottom: 3.5rem;
+  }
+  .contact {
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+  }
+}

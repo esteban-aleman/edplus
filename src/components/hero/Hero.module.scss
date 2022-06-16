@@ -1,0 +1,33 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.content {
+  width: 50%;
+  margin-left: 10%;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+  color: constants.$white;
+}
+.eyebrow {
+  color: constants.$primary;
+  font-weight: constants.$font-bold;
+}
+.title {
+  margin: 1.5rem 0;
+  max-width: 600px;
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .content {
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+}

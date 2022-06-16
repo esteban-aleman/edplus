@@ -1,0 +1,23 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  padding: 7.5rem 0;
+}
+.container {
+  max-width: constants.$containerWidth;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.link {
+  color: constants.$secondary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .root {
+    padding: 3.5rem 0;
+  }
+}

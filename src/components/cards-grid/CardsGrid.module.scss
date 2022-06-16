@@ -1,0 +1,15 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3rem;
+  list-style: none;
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .root {
+    display: block;
+  }
+}

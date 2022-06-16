@@ -1,0 +1,44 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  width: calc(100% / 3);
+}
+.image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform linear 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.imageContainer {
+  height: 275px;
+  width: 100%;
+  overflow: hidden;
+}
+.bottomContainer {
+  padding: 2rem 1.5rem 3rem;
+}
+.title {
+  margin-bottom: 1rem;
+}
+.text {
+  margin-bottom: 2rem;
+  font-size: constants.$font-s;
+}
+.link {
+  font-size: constants.$font-s;
+  color: constants.$secondary;
+  transition: color ease-in-out 0.3s;
+  &:hover {
+    color: constants.$primary;
+  }
+}
+@media (max-width: constants.$tablet-breakpoint) {
+  .root {
+    width: 100%;
+  }
+}

@@ -1,0 +1,37 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  position: relative;
+}
+
+.image {
+  min-height: 375px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.textContent {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.title,
+.text {
+  color: constants.$white;
+}
+.title {
+  margin-bottom: 0.5rem;
+}
+.text {
+  font-size: constants.$font-s;
+  line-height: 1.25rem;
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+}

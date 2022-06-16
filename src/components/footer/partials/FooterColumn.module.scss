@@ -1,0 +1,42 @@
+@use "utils/sass/_constants.scss" as constants;
+
+.root {
+  margin-left: 5.5rem;
+}
+.title {
+  font-size: constants.$font-sm;
+  letter-spacing: 0.125rem;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: constants.$font-bold;
+  &:before {
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    content: "";
+    background-color: constants.$white;
+    height: 1px;
+    width: 2rem;
+  }
+}
+.linkList {
+  padding: 0;
+  margin: 0;
+}
+.link {
+  color: constants.$quaternary;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: constants.$tablet-breakpoint) {
+  .root:first-child {
+    margin-left: 0;
+  }
+}
